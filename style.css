@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+:root {
+  --color-white: hsl(0, 100%, 100%);
+  --color-purple-100: hsl(275, 100%, 97%);
+  --color-purple-600: hsl(292, 16%, 49%);
+  --color-purple-950: hsl(292, 42%, 14%);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+  background-color: var(--color-purple-100);
+  background-position: top;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  padding: 28px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title img {
+  width: 28px;
+  height: auto;
+}
+
+.title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--color-purple-950);
+}
+
+.accordion {
+  overflow: hidden;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.accordion-title:not(:last-child) {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-purple-100);
+}
+
+.accordion-title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-purple-950);
+  transition: color 0.3s ease-out;
+}
+
+.accordion-title h3:hover {
+  color: hsl(293, 80%, 50%);
+}
+
+.accordion-title img {
+  width: 26px;
+  height: auto;
+}
+
+.accordion-body {
+  height: 0;
+}
+
+.accordion.show .accordion-body {
+  height: fit-content;
+}
+
+.accordion.show .accordion-body p {
+  font-weight: 400;
+  line-height: 20px;
+  margin: 20px 0;
+  color: var(--color-purple-600);
+}
+
+.accordion.show .accordion-title:not(:last-child) {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+@media (max-width: 500px) {
+  body {
+    background: url(assets/images/background-pattern-mobile.svg) no-repeat;
+    background-color: var(--color-purple-100);
+    background-size: 100%;
+    padding: 15% 6%;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .title {
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .title h1 {
+    font-size: 36px;
+  }
+}
