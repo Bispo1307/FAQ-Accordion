@@ -89,11 +89,16 @@ body {
 }
 
 .accordion-body {
-  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-out;
+  opacity: 0;
 }
 
 .accordion.show .accordion-body {
-  height: fit-content;
+  max-height: 100px;
+  transition: all 0.4s ease-out;
+  opacity: 1;
 }
 
 .accordion.show .accordion-body p {
